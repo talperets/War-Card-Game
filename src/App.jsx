@@ -9,18 +9,16 @@ function App() {
   const showPage = () => {
     switch (page) {
       case 1:
-        return <Game />;
+        return <Game next={setPage} />;
 
       case 2:
-        return <Score />;
+        return <Score next={setPage} />;
 
       default:
-        return <Home next={setPage}/>;
+        return <Home next={setPage} />;
     }
   };
-  return <div className="App">
-    {showPage()}
-    </div>;
+  return <div className="App">{showPage()}</div>;
 }
 
 export default App;
