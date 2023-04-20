@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import "./index.css";
 import Home from "./components/Home";
 import Game from "./components/Game";
 import Deck from "./classes/Deck";
 import Player from "./classes/Player";
 import Score from "./components/Score";
+
 let computer, player, deck;
 function App() {
   const [page, setPage] = useState(0);

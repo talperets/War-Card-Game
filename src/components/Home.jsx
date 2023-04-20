@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 
 export default function Home(props) {
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ export default function Home(props) {
         }}
         placeholder="Enter Your name"
       />
-      <button disabled={name.length === 0 ? true : false} onClick={()=>props.initGame(name)}>Next</button>
+      <Button variant="contained" disabled={name.length === 0 ? true : false} onClick={()=>props.initGame(name)}>Next</Button>
     </div>
   );
 }

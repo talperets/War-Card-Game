@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 let computerCnt = 0,
   playerCnt = 0;
 export default function Game(props) {
@@ -35,7 +36,7 @@ export default function Game(props) {
         <h1>{props.player.cards[index]}</h1>
       </div>
       <h1>{props.player.name}</h1>
-      <button onClick={play}>Next</button>
+      <Button variant="contained" onClick={play}>Next</Button>
     </div>
   );
 }
