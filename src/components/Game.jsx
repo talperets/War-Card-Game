@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import { Button } from "@mui/material";
+import Card from "./Card";
 let computerCnt = 0,
   playerCnt = 0;
 export default function Game(props) {
@@ -20,23 +22,21 @@ export default function Game(props) {
         props.player.wins++;
         props.computer.losses++;
         props.player.currentGame = "Win";
-      } else{
+      } else {
         props.player.currentGame = "Draw";
       }
-      props.next(2)
+      props.next(2);
     }
   };
   return (
     <div className="deck">
       <h1>{props.computer.name}</h1>
-      <div className="card">
-        <h1>{props.computer.cards[index]}</h1>
-      </div>
-      <div className="card">
-        <h1>{props.player.cards[index]}</h1>
-      </div>
+      <Card cardIndex={props.computer.cards[index]} />
+      <Card cardIndex={props.player.cards[index]} />
       <h1>{props.player.name}</h1>
-      <Button variant="contained" onClick={play}>Next</Button>
+      <Button variant="contained" onClick={play}>
+        Next
+      </Button>
     </div>
   );
 }
