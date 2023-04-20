@@ -4,7 +4,6 @@ export default class Player{
     games = 0
     currentGame = ''
 
-
     constructor(name, cards){
         this.name = name
         this.cards = cards

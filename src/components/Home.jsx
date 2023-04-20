@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-export default function Home() {
+export default function Home(props) {
   const [name, setName] = useState("");
+  
   return (
+    
     <div>
       <h1>Ready for War?</h1>
       <input
@@ -12,7 +14,7 @@ export default function Home() {
         }}
         placeholder="Enter Your name"
       />
-      <button disabled={name.length === 0 ? true : false}>Next</button>
+      <button disabled={name.length === 0 ? true : false} onClick={()=>props.initGame(name)}>Next</button>
     </div>
   );
 }
