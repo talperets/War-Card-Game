@@ -7,7 +7,7 @@ export default function Home(props) {
   const [name, setName] = useState("");
 
   return (
-    <div>
+    <div className="home-container">
       <h1>Ready for War?</h1>
       <input
         type="text"
@@ -16,6 +16,7 @@ export default function Home(props) {
         }}
         placeholder="Enter Your name"
       />
+      <br style={{margin: '5px'}}/>
       <Button
         variant="contained"
         onClick={() => {
@@ -26,7 +27,7 @@ export default function Home(props) {
       >
         Next
       </Button>
-      <div>
+        <br style={{margin: '3px'}}/>
         <Button
           variant="contained"
           onClick={() => {
@@ -35,7 +36,7 @@ export default function Home(props) {
         >
           {showTable == 'none'? "Show": "Hide"} Table
         </Button>
-      </div>
+      
       <GameTable showTable={showTable} players={props.players} />
     </div>
   );

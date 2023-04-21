@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 export default function Score(props) {
   const checkScore = () => {
     switch (props.player.currentGame) {
@@ -13,12 +14,13 @@ export default function Score(props) {
   };
   return (
     <div>
-      <Button variant="contained" onClick={()=>props.next(0)}>LogOut</Button>
+      <Button variant="contained" onClick={()=>props.next(0)}>
+        <CloseIcon/>
+      </Button>
       {checkScore()}
       <h2>
         {props.player.wins} - {props.player.losses}
       </h2>
-      
       <Button variant="contained" onClick={props.replay}>Again?</Button>
     </div>
   );
