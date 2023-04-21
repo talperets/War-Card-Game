@@ -5,6 +5,19 @@
   padding: 2rem;
   text-align: center;
 }
+
+.table{
+  margin-left: 30px;
+}
+.gamenum{
+  margin-right: 30px;
+}
+
+.game-container{
+  display: flex;
+  align-items: center;
+  
+}
 .card {
   display: flex;
   justify-content: center;

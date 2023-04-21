@@ -13,10 +13,12 @@ export default function Score(props) {
   };
   return (
     <div>
+      <Button variant="contained" onClick={props.savePlayers}>LogOut</Button>
       {checkScore()}
       <h2>
         {props.player.wins} - {props.player.losses}
       </h2>
+      
       <Button variant="contained" onClick={props.replay}>Again?</Button>
     </div>
   );

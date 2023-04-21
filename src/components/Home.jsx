@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
+import GameTable from "./GameTable";
 
 export default function Home(props) {
+  const [showTable, setShowTable] = useState('none')
   const [name, setName] = useState("");
 
   return (
@@ -22,8 +24,19 @@ export default function Home(props) {
             : props.initGame(name);
         }}
       >
+        
         Next
       </Button>
+      <div>
+      <Button variant="contained" onClick={()=>{
+        if (showTable == 'none') {
+          setShowTable('block')
+        } else {
+          setShowTable('none')
+        }
+      }}>Show Table</Button>
+      </div>
+      <GameTable showTable={showTable} players={props.players}/>
     </div>
   );
 }
