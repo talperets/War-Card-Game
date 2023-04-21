@@ -35,11 +35,18 @@ export default function Game(props) {
     }
   };
   return (
-    <div className="game-container">
-      <div className="gamenum">
+    <div className="parent">
+      <div className="title">
       <h1>{props.computer.name}</h1>
-        <h2>N.{props.player.games}</h2>
+      <h1>Score:</h1>
+      </div>
+      <div className="game-container">
+      <div className="gamenum">
+      
+        <div style={{left: '470px', position: 'absolute', bottom: '350px'}}>
+        <h2 >N.{props.player.games}</h2>
         <h2>{props.computer.wins} - {props.computer.losses}</h2>
+        </div>
       </div>
       <div className="deck">
         
@@ -50,7 +57,11 @@ export default function Game(props) {
           Next
         </Button>
       </div>
+      <div style={{right: '440px', position: 'absolute', bottom: '400px'}}>
+
       <GameTable players={props.players} />
+      </div>
+    </div>
     </div>
   );
 }
