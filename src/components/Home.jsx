@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import GameTable from "./GameTable";
 
 export default function Home(props) {
-  const [showTable, setShowTable] = useState('none')
+  const [showTable, setShowTable] = useState("none");
   const [name, setName] = useState("");
 
   return (
@@ -24,19 +24,19 @@ export default function Home(props) {
             : props.initGame(name);
         }}
       >
-        
         Next
       </Button>
       <div>
-      <Button variant="contained" onClick={()=>{
-        if (showTable == 'none') {
-          setShowTable('block')
-        } else {
-          setShowTable('none')
-        }
-      }}>Show Table</Button>
+        <Button
+          variant="contained"
+          onClick={() => {
+            showTable === "none" ? setShowTable("block") : setShowTable("none");
+          }}
+        >
+          {showTable == 'none'? "Show": "Hide"} Table
+        </Button>
       </div>
-      <GameTable showTable={showTable} players={props.players}/>
+      <GameTable showTable={showTable} players={props.players} />
     </div>
   );
 }
