@@ -4,7 +4,7 @@ export default class Deck {
   initCards() {
     for (let i = 1; i <= 13; i++) {
       for (let j = 0; j < 4; j++) {
-        this.cards.push(i);
+        this.cards.push({number: i, type: j});
       }
     }
   }

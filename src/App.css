@@ -30,12 +30,12 @@
 }
 .card {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  width: 50px;
-  height: 100px;
+  width: 60px;
+  height: 120px;
   border: #000000 solid 2px;
-  background-color: rgb(206, 205, 205);
   margin: 10px;
   border-radius: 10px;
   padding-bottom: 5px;

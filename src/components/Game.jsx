@@ -8,9 +8,9 @@ let computerCnt = 0,
 export default function Game(props) {
   const [index, setIndex] = useState(0);
   const play = () => {
-    if (props.computer.cards[index] > props.player.cards[index]) {
+    if (props.computer.cards[index].number > props.player.cards[index].number) {
       computerCnt++;
-    } else if (props.computer.cards[index] < props.player.cards[index]) {
+    } else if (props.computer.cards[index].number < props.player.cards[index].number) {
       playerCnt++;
     }
     setIndex(index + 1);
@@ -47,8 +47,8 @@ export default function Game(props) {
       <div className="game-container">
         <div className="gamenum"></div>
         <div className="deck">
-          <Card cardIndex={props.computer.cards[index]} />
-          <Card cardIndex={props.player.cards[index]} />
+          <Card cardIndex={props.computer.cards[index].number } cardType={props.computer.cards[index].type}/>
+          <Card cardIndex={props.player.cards[index].number} cardType={props.player.cards[index].type} />
           <h1>{props.player.name}</h1>
           <Button variant="contained" onClick={play}>
             Next
