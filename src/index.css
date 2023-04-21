@@ -8,7 +8,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-input{
+input{ 
   border: grey 2px solid;
 }
 button{

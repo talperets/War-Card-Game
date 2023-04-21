@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import Game from "./components/Game";
@@ -8,9 +8,13 @@ import Score from "./components/Score";
 
 let computer, player, deck;
 function App() {
-  
-  const [players, setPlayers] = useState([]);
+  const localPlayers = JSON.parse(localStorage.getItem('players'))
+  const [players, setPlayers] = useState(localPlayers ? [...localPlayers] : []);
   const [page, setPage] = useState(0);
+  useEffect(() => {
+    localStorage.setItem('players',JSON.stringify([...players]))
+  })
+  
   const initGame = (name) => {
     deck = new Deck();
     deck.initCards();
@@ -39,7 +43,8 @@ function App() {
       }
     });
     if (!exist) {
-      setPlayers([...players, player]);
+      let playersArr = [...players, player]
+      setPlayers(playersArr);
     }
     setPage(0);
   };
@@ -52,7 +57,6 @@ function App() {
       player.cards.push(deck.dealCards());
       computer.cards.push(deck.dealCards());
     }
-    
     setPage(1);
   };
   const showPage = () => {
@@ -64,6 +68,7 @@ function App() {
             player={player}
             players={players}
             computer={computer}
+            savePlayers={savePlayers}
           />
         );
 
@@ -71,7 +76,7 @@ function App() {
         return (
           <Score
             next={setPage}
-            savePlayers={savePlayers}
+            
             player={player}
             replay={replay}
           />
