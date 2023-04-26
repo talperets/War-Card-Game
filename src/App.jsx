@@ -13,7 +13,7 @@ function App() {
   const [page, setPage] = useState(0);
   useEffect(() => {
     localStorage.setItem('players',JSON.stringify([...players]))
-  })
+  }, [players])
   
   const initGame = (name) => {
     deck = new Deck();
@@ -45,6 +45,8 @@ function App() {
     if (!exist) {
       let playersArr = [...players, player]
       setPlayers(playersArr);
+    } else{
+      setPlayers([...players]);
     }
     setPage(0);
   };
