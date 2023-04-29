@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 
 import Card from "./Card";
-
+import GameTable from "./GameTable";
 let computerCnt = 0,
   playerCnt = 0;
 export default function Game(props) {
@@ -46,17 +46,19 @@ export default function Game(props) {
   };
   return (
     <div className="parent">
-      
-        <h2>{props.computer.name}  N.{props.player.games}</h2>
+      <div>
+        <h1>{props.computer.name}</h1>
+        <h2 >N.{props.player.games}</h2>
         <h2 style={{color: winColor[0]}}>
           {computerCnt}
         </h2>
-      
+      </div>
       <div className="game-container">
+        <div className="gamenum"></div>
         <div className="deck">
           <Card cardIndex={props.computer.cards[index].number } cardType={props.computer.cards[index].type}/>
           <Card cardIndex={props.player.cards[index].number} cardType={props.player.cards[index].type} />
-          <h2>{props.player.name}</h2>
+          <h1>{props.player.name}</h1>
           <h2 style={{color: winColor[1]}}>{playerCnt}</h2>
           <Button variant="contained" onClick={play}>
             Next
@@ -65,6 +67,7 @@ export default function Game(props) {
         
         
       </div>
+        <GameTable players={props.players} />
     </div>
   );
 }
