@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
 import { Button } from "@mui/material";
-
 import Card from "./Card";
-
 let computerCnt = 0,
   playerCnt = 0;
 export default function Game(props) {
