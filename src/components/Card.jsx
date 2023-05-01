@@ -14,27 +14,27 @@ export default function Card(props) {
   const cardIcons = () => {
     switch (props.cardIndex) {
       case 13:
-        return <img src="src/icons/chess-king-solid.svg" alt="" />;
+        return <h2>King</h2>;
       case 12:
-        return <img src="src/icons/chess-queen-solid.svg" alt="" />;
+        return <h2>Queen</h2>;
       case 11:
-        return <h1>J</h1>;
+        return <h2>Jack</h2>;
       case 1:
-        return <h1>A</h1>;
+        return <h2>Ace</h2>;
       default:
-        return <h1>{props.cardIndex}</h1>;
+        return <h2>{props.cardIndex}</h2>;
     }
   };
   const typeIcons = () => {
     switch (props.cardType) {
       case 0:
-        return <img width="30px" src="src/icons/clover-solid.svg" alt="" />;
+        return <h2>Clover</h2>;
       case 1:
-        return <img width="30px" src="src/icons/heart-solid.svg" alt="" />;
+        return <h2>Heart</h2>;
       case 2:
-        return <img width="30px" src="src/icons/leaf-solid.svg" alt="" />;
+        return <h2>Leaf</h2>;
       case 3:
-        return <img width="30px" src="src/icons/diamond-solid.svg" alt="" />;
+        return <h2>Diamond</h2>;
     }
   };
 
